@@ -1,6 +1,5 @@
-import { DataTypes, Model, Optional } from 'sequelize';
-import { sequelize } from '../db';
-import bcryptjs from 'bcryptjs'
+import { DataTypes, Model, Optional } from 'sequelize'
+import { sequelize } from '../db'
 
 interface UserAttributes {
   id: number;

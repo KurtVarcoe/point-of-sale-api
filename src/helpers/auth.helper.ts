@@ -1,4 +1,4 @@
-import jwt, { JwtPayload } from 'jsonwebtoken'
+import jwt from 'jsonwebtoken'
 import { User } from '../models/user.model'
 import { HTTP_CODES } from '../../globals'
 import { FastifyReply, FastifyRequest } from 'fastify'
