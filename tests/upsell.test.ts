@@ -4,10 +4,15 @@ import app from '../src/app'
 import { HTTP_CODES } from '../globals'
 import { Product } from '../src/models/product.model'
 import { productThree, productTwo, userOne } from './data'
+import { sequelize } from '../src/db'
 
 const root = '/upsell'
 
-beforeEach(setup)
+beforeAll(setup)
+
+afterAll(() => {
+  sequelize.close()
+})
 
 test('Should create upsell link', async () => {
   await request(app.server).post(`${root}/link`)

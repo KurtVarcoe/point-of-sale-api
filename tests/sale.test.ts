@@ -3,10 +3,15 @@ import { setup } from "./test_setup"
 import app from '../src/app'
 import { HTTP_CODES } from '../globals'
 import { userOne } from './data'
+import { sequelize } from '../src/db'
 
 const root = '/sale'
 
-beforeEach(setup)
+beforeAll(setup)
+
+afterAll(() => {
+  sequelize.close()
+})
 
 test('Should create sale', async () => {
   await request(app.server).post(`${root}/create`)

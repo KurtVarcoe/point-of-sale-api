@@ -4,10 +4,15 @@ import { User } from '../src/models/user.model'
 import { HTTP_CODES } from '../globals'
 import { userOne } from './data'
 import { setup } from './test_setup'
+import { sequelize } from '../src/db'
 
 const root = '/user'
 
-beforeEach(setup)
+beforeAll(setup)
+
+afterAll(() => {
+  sequelize.close()
+})
 
 test('Should create new user', async () => {
   const password = 'Red123'
