@@ -9,6 +9,8 @@ Make sure mySQL is running
 
 Create 2 databases, 1 for running the server, 1 for tests
 
+Grant your user all privileges on these two dbs
+
 ## Environment variables
 
 Change the .env.template file to .env and add all variables
